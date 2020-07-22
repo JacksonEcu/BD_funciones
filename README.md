@@ -1,6 +1,6 @@
-# crud_procesos_alamacenados
-create database usuarios;
-use usuarios;
+# crud_procesos
+create database crud;
+use crud;
 
 create table t_usuarios (id_usuario int auto_increment, 
 	cuentanro varchar(150), 
@@ -13,7 +13,7 @@ ALTER TABLE t_usuarios CONVERT TO CHARACTER SET utf8;
 DROP procedure IF EXISTS `sp_mostrar_datos`;
 
 DELIMITER $$
-USE `usuarios`$$
+USE `crud`$$
 CREATE PROCEDURE `sp_mostrar_datos` ()
 BEGIN
 	select id_usuario,
@@ -28,7 +28,7 @@ DELIMITER ;
 DROP procedure IF EXISTS `sp_insertar_datos`;
 
 DELIMITER $$
-USE `usuarios`$$
+USE `crud`$$
 CREATE PROCEDURE `sp_insertar_datos` (in cuentanroI varchar(50),
 										in cedulaI varchar(50),
                                         in valorI varchar(50))
@@ -45,7 +45,7 @@ DELIMITER ;
 DROP procedure IF EXISTS `sp_actualizar_datos`;
 
 DELIMITER $$
-USE `usuarios`$$
+USE `crud`$$
 CREATE PROCEDURE `sp_actualizar_datos` (in cuentanroU varchar(50),
 										in cedulaU varchar(50),
                                         in valorU varchar(50),
@@ -63,7 +63,7 @@ DELIMITER ;
 DROP procedure IF EXISTS `sp_eliminar_datos`;
 
 DELIMITER $$
-USE `usuarios`$$
+USE `crud`$$
 CREATE PROCEDURE `sp_eliminar_datos` (in idUsuarioD int)
 BEGIN
 	delete from t_usuarios 
